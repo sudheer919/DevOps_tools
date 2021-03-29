@@ -2,6 +2,7 @@
 
 sudo yum remove ansible -y 
 rm -rf /usr/lib/python2.7/site-packages/ansible*
-sudo pip3 install ansible
+yum install python3
+sudo pip3 install --user ansible
 
 #

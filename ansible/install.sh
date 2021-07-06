@@ -24,12 +24,12 @@ fi
 }
 
 PYTHON3() {
-    python3 --version &>>$ANISIBLE_INSTALLATION
+    python3 --version >/dev/null
 
     if [ $? -ne 0 ]; then
         sudo yum install python3 &>>$ANISIBLE_INSTALLATION
         else
-        echo "$(python3 --version) Is Installed Nothing to Do"
+        echo "$(python3 --version) Is Installed Nothing to Do" 
     fi 
 }
 

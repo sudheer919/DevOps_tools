@@ -36,19 +36,19 @@ PYTHON3() {
 PRINT "DOWNLOADING...get-pip.py"
 GETPIPPY=./get-pip.py 
 PRINT "To manually install pip, securely 1 download get-pip.py"
-[[ -e $GETPIPPY ]] ||  curl -s  https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+[[ -e $GETPIPPY ]] ||  curl -s  https://bootstrap.pypa.io/get-pip.py -o get-pip.py  &>>$ANISIBLE_INSTALLATION
 STAT $? "DOWNLOADING...get-pip.py"
 
 PRINT "Installing Python3*"
-PYTHON3
+PYTHON3  &>>$ANISIBLE_INSTALLATION
 STAT $? "Installing $(python --version)"
 
 PRINT  "Installing python get-pip"
-python3 get-pip.py
+python3 get-pip.py  &>>$ANISIBLE_INSTALLATION
 STAT $? "Installing python get-pip"
 
 PRINT "Installing Ansible"
-pip install ansible
+pip install ansible  &>>$ANISIBLE_INSTALLATION
 STAT $? "installing Ansible"
 
 ansible --version

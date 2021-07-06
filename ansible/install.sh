@@ -7,6 +7,14 @@
 
 ANISIBLE_INSTALLATION=/tmp/ansible_installation.log
 
+
+ ELV=$(rpm -q basesystem |sed -e 's/\./ /g' |xargs -n 1|grep ^el)
+ 
+ if [ $ELV != el7 ] ; then 
+     echo -e "\e[31merror \e[0m "OS Version not supported"
+     exit1
+ fi 
+
 PRINT() {
      echo -e  "\e[37m-------------------------------------------------------------"
      echo -e  "\e[1;35m[INFO] :: $1 \e[0m"

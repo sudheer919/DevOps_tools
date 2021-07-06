@@ -8,9 +8,9 @@
 
 
 PRINT() {
-     echo -e  "\e[33m-------------------------------------------------------------"
+     echo -e  "\e[32m-------------------------------------------------------------"
      echo -e  "\e[1;35m[INFO] :: $1 \e[0m"
-     echo -e  "\e[33m-------------------------------------------------------------"
+     echo -e  "\e[32m-------------------------------------------------------------"
 }
 
 STAT() {
@@ -24,7 +24,7 @@ fi
 }
 
 PYTHON3() {
-    python3 --version
+    python3 --version &>/dev/null
 
     if [ $? -ne 0 ]; then
         sudo yum install python3 -y &>/dev/null
@@ -35,7 +35,7 @@ PYTHON3() {
 
 PRINT "DOWNLOADING...get-pip.py"
 GETPIPPY=./get-pip.py 
-echo "To manually install pip, securely 1 download get-pip.py"
+PRINT "To manually install pip, securely 1 download get-pip.py"
 [[ -e $GETPIPPY ]] ||  curl -s  https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 STAT $? "DOWNLOADING...get-pip.py"
 

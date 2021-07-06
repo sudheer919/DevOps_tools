@@ -50,5 +50,6 @@ STAT $? "Installing python get-pip"
 PRINT "Installing Ansible"
 pip install ansible
 STAT $? "installing Ansible"
+
 ansible --version
 

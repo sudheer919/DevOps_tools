@@ -5,7 +5,7 @@
 # sudo yum install python3 -y
 # sudo pip3 install ansible  --user ansible
 
-
+ANISIBLE_INSTALLATION=/tmp/ansible_installation.log
 
 PRINT() {
      echo -e  "\e[37m-------------------------------------------------------------"
@@ -24,10 +24,10 @@ fi
 }
 
 PYTHON3() {
-    python3 --version >/dev/null
+    python3 --version &>>$ANISIBLE_INSTALLATION
 
     if [ $? -ne 0 ]; then
-        sudo yum install python3 -y >/dev/null
+        sudo yum install python3 &>>$ANISIBLE_INSTALLATION
         else
         echo "$(python3 --version) Is Installed Nothing to Do"
     fi 

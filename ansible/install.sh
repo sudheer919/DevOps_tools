@@ -13,6 +13,8 @@ ANISIBLE_INSTALLATION=/tmp/ansible_installation.log
  if [ $ELV != el7 ] ; then 
      echo -e "\e[31merror \e[0m "OS Version not supported"
      exit1
+    else
+     echo "this os is $ELV" 
  fi 
 
 PRINT() {

@@ -6,6 +6,7 @@
 # sudo pip3 install ansible  --user ansible
 
 ANISIBLE_INSTALLATION=/tmp/ansible_installation.log
+PYVER=$(python3 --version)
 
 
 ELV=$(rpm -q basesystem |sed -e 's/\./ /g' |xargs -n 1|grep ^el)
@@ -33,7 +34,7 @@ fi
 }
 
 PYTHON3() {
-    python3 --version >/dev/null
+    $PYVER >/dev/null
 
     if [ $? -ne 0 ]; then
         sudo yum install python3 &>>$ANISIBLE_INSTALLATION
@@ -50,7 +51,7 @@ STAT $? "DOWNLOADING...get-pip.py"
 
 PRINT "Installing Python3*"
   PYTHON3  &>>$ANISIBLE_INSTALLATION
-STAT $? "Installing $(python --version)"
+STAT $? "Installing $PYVER"
 
 PRINT  "Installing python get-pip"
   python3 get-pip.py  &>>$ANISIBLE_INSTALLATION

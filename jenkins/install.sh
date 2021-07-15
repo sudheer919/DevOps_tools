@@ -9,5 +9,12 @@ CheckRoot
 
 #Installing Jenkins
 PrintHead "INSTALLING Jenkins"
-false
+yum install java wget -y  &>/tmp/java.log
 Stat $?
+
+PrintHead "Adding Jenkins Repo"
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+Stat $?
+PrintHead "Adding Key"
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+

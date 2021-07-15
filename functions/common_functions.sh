@@ -2,16 +2,20 @@
 
 ## Predefined colors vars
 R="\e[31m"
+G="\e[32m"
 N="\e[0m"
 P="\e[35m"
 
 ## Print Error in Red colour
 error() {
-  echo -e "$R✗::$1 $N"
+  echo -e "${R}✗::$1 $N"
 }
 ##Print INFO
 PrintHead(){
-  echo -e "$P➜ INFO::$1$N"
+  echo -e "${P}➜ INFO::$1$N"
+}
+SuccessOut(){
+  	echo -e "${G}✓  $1 $2 $N"
 }
 
 ##Checking Root User or not
@@ -28,7 +32,7 @@ Stat() {
         error "Install Failed ::: Check log file /tmp/function.log"
         exit 2
         else
-        PrintHead "Installation is SUCCESSFUL"
+        SuccessOut "Installation is SUCCESSFUL"
     fi
 }
 

@@ -15,7 +15,7 @@ PrintHead(){
   echo -e "${P}➜ INFO::$1$N"
 }
 SuccessOut(){
-  	echo -e "${G}✓  $1 $2 $N"
+  	echo -e "${G}✓  $1 $N"
 }
 
 ##Checking Root User or not
@@ -32,7 +32,7 @@ Stat() {
         error "Install Failed ::: Check log file /tmp/function.log"
         exit 2
         else
-        SuccessOut "Installation is SUCCESSFUL"
+        SuccessOut "$1 SUCCESSFUL"
     fi
 }
 

@@ -7,4 +7,5 @@ source /tmp/functions.sh
 ## Checking Root User or not.
 CheckRoot
 
+#Installing Jenkins
 echo "hello jenkins"

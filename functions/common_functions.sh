@@ -3,11 +3,17 @@
 ## Predefined colors vars
 R="\e[31m"
 N="\e[0m"
+P="\e[35m"
 
 
 error() {
-  echo -e "$R✗ :: $1 $N"
+  echo -e "$R✗::$1 $N"
 }
+
+PrintHead(){
+  echo -e "$P➜ INFO::$1$N"
+}
+
 ##Checking Root User or not
 CheckRoot() {
   RID=$(id -u)
@@ -17,4 +23,3 @@ CheckRoot() {
   fi
 }
 
-CheckRoot

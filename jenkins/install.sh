@@ -9,4 +9,4 @@ CheckRoot
 
 #Installing Jenkins
 PrintHead "INSTALLING Jenkins"
-Stat
+Stat $?

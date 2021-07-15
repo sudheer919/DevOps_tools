@@ -5,10 +5,13 @@ R="\e[31m"
 N="\e[0m"
 ##Checking Root User or not
 
+error() {
+  echo -e "$R✗ :: $1 $N"
+}
 CheckRoot() {
   RID=$(id -u)
   if [ $RID -ne 0 ]; then
-    echo -e "$R ✗ :: You need to be Root User to perform this command...!$N"
+     error You need to be Root User to perform this command...!
     exit 1
   else
     echo "Helo world"

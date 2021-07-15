@@ -28,5 +28,5 @@ Stat $?
 PrintHead "Starting Jenkins Server"
 sudo systemctl enable jenkins &>>/tmp/jinstall.log && systemctl start jenkins  &>>/tmp/jinstall.log
 Stat $?
-echo -e "\e[32m JENKINS INSTALLATION SUCCESSFUL\e[0m"
+echo -e "\e[32m✓  JENKINS INSTALLATION SUCCESSFUL\e[0m"
 

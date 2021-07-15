@@ -22,4 +22,11 @@ CheckRoot() {
      exit 1
   fi
 }
+## Status checkinng
+Stat() {
+    if [ $1 -ne 0 ]; then
+        error "Install Failed ::: Check log file /tmp/function.log"
+        exit 2
+    fi
+}
 

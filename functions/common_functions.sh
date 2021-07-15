@@ -13,7 +13,7 @@ CheckRoot() {
   RID=$(id -u)
   if [ $RID -ne 0 ]; then
      error "You need to be Root User to perform this command...!"
-    exit 1
+     exit 1
   fi
 }
 

@@ -5,4 +5,5 @@ curl -s https://raw.githubusercontent.com/sudheer919/DevOps_tools/main/functions
 
 source /tmp/functions.sh
 
+CheckRoot
 echo "hello jenkins"

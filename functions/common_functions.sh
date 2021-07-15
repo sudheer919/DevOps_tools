@@ -17,9 +17,11 @@ error() {
 
 ### Checking Root User or not
 CheckRoot() {
-UID=$(id -u)
-if [ $UID -ne 0 ]; then
-  error You must be a root to perform this task"
-  exit 1
-fi
+	UID=$(id -u)
+	if [ $UID -ne 0 ]; then
+	  error You must be a root to perform this task"
+	  exit 1
+	fi
 }
+
+CheckRoot

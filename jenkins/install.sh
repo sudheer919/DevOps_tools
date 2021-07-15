@@ -9,3 +9,4 @@ CheckRoot
 
 #Installing Jenkins
 echo "hello jenkins"
+PrintHead "INSTALLING Jenkins"

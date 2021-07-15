@@ -2,13 +2,13 @@
 
 ## Colors
 R="\e[31m"
-B="\e[34m"
-Y="\e[33m"
-G="\e[32m"
-BU="\e[1;4m"
-U="\e[4m"
-IU="\e[7m"
-LU="\e[2m"
+#B="\e[34m"
+#Y="\e[33m"
+#G="\e[32m"
+#BU="\e[1;4m"
+#U="\e[4m"
+#IU="\e[7m"
+#LU="\e[2m"
 N="\e[0m"
 
 error() {

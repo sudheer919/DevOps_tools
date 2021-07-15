@@ -45,7 +45,7 @@ Os_checking() {
       exit 1
     else
       PrintHead "${B_system} so this Script is Capabul for CentOs systems"
-      PrintHead "You can execute This Script"
+      PrintHead "This script is Installing jenkins Server"
 
 
   fi

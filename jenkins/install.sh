@@ -26,7 +26,7 @@ sudo yum install jenkins -y &>>/tmp/jinstall.log
 Stat $?
 
 PrintHead "Starting Jenkins Server"
-systemctl enable jenkins && systemctl start jenkins  &>>/tmp/jinstall.log
+sudo systemctl enable jenkins &>>/tmp/jinstall.log && systemctl start jenkins  &>>/tmp/jinstall.log
 Stat $?
 echo -e "\e[32m JENKINS INSTALLATION SUCCESSFUL\e[0m"
 

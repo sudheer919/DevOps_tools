@@ -9,4 +9,5 @@ CheckRoot
 
 #Installing Jenkins
 PrintHead "INSTALLING Jenkins"
+false
 Stat $?

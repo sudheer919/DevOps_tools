@@ -6,7 +6,8 @@ curl -s https://raw.githubusercontent.com/sudheer919/DevOps_tools/main/functions
 source /tmp/functions.sh
 ## Checking Root User or not.
 CheckRoot
-
+##checking OS
+Os_checking
 #Installing Jenkins
 PrintHead "Installing Java "
 yum install java wget -y  &>/tmp/java.log

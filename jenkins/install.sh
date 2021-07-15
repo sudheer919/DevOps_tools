@@ -14,7 +14,9 @@ Stat $? "Jenkins"
 
 PrintHead "Adding Jenkins Repo"
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-Stat $?
+Stat $? "Adding Repo"
+
 PrintHead "Adding Key"
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+Stat $? "Adding key"
 

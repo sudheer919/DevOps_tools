@@ -1,13 +1,14 @@
 #!/bin/bash
 
-
+## Predefined colors vars
 R="\e[31m"
 N="\e[0m"
-##Checking Root User or not
+
 
 error() {
   echo -e "$R✗ :: $1 $N"
 }
+##Checking Root User or not
 CheckRoot() {
   RID=$(id -u)
   if [ $RID -ne 0 ]; then

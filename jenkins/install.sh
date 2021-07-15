@@ -8,7 +8,7 @@ source /tmp/functions.sh
 CheckRoot
 
 #Installing Jenkins
-PrintHead "INSTALLING "
+PrintHead "Installing Java "
 yum install java wget -y  &>/tmp/java.log
 Stat $?
 
@@ -19,3 +19,13 @@ Stat $?
 PrintHead "Adding Key"
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 Stat $?
+
+PrintHead "Installing Jenkins.."
+sudo yum install jenkins -y &>>/tmp/jinstall.log
+Stat $?
+
+PrintHead "Starting Jenkins Server"
+systemctl enable jenkins && systemctl start jenkins  &>>/tmp/jinstall.log
+Stat $?
+echo -e "\e[32m JENKINS INSTALLATION SUCCESSFUL\e[0m"
+

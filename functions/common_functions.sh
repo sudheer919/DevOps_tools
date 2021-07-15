@@ -5,11 +5,11 @@ R="\e[31m"
 N="\e[0m"
 P="\e[35m"
 
-
+## Print Error in Red colour
 error() {
   echo -e "$R✗::$1 $N"
 }
-
+##Print INFO
 PrintHead(){
   echo -e "$P➜ INFO::$1$N"
 }

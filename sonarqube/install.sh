@@ -63,4 +63,5 @@ id -u sonar &>>/dev/null || useradd sonar
 Stat $? "sonar User Creation Is ::"
 
 PrintHead "Downloading Sonarqube.zip"
-curl -s -o ${SFILENAME} ${}
+curl -s -o ${SFILENAME} ${SDURL} 
+Stat $? 

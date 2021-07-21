@@ -23,7 +23,7 @@ PrintHead() {
 Stat(){
     if [ $1 -ne 0 ] ;then 
         echo -e "${R}✗${N}  $2 ${R}UNSUCCESSFUL${N}"
-        echo -e "Chec"
+        echo -e "Check "
         exit
     else
         echo -e "${G}✓${N}  $2 ${G}SUCCESS${N}"

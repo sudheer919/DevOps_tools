@@ -66,6 +66,6 @@ PrintHead "Downloading Sonarqube.zip"
 cd /home/sonar 
 curl -s -o ${SFILENAME} ${SDURL} 
 Stat $? "sonarqub Downlode is ::"
-
+unzip -o $
 mv /home/sonar${SFILENAME}  /home/sonar/${SDIRNAME}
 

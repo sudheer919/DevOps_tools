@@ -52,4 +52,4 @@ Stat $? "Installing EPEL Packages ::"
 
 PrintHead "Installing Java-11-Openjdk & Os-Utilities"
 yum install java-11-openjdk unzip -y &>>${LOG}
-Stat $? "Installing Java and Os-Utilities"
+Stat $? "Installing Java and Os-Utilities ::"

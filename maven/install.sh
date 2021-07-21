@@ -10,7 +10,7 @@ LOG=/tmp/mvn.log
 Mvn_Ver=$(curl -s  https://maven.apache.org/download.cgi | grep "Downloading"| awk '{print $5}' | awk -F '<' '{print $1}')
 
 if [ $LID -ne 0 ] ;then
-    echo -e "${R}You need to be A root user to run this script${N}"
+    echo -e "${R}You need to be root to perform this command.${N}"
     exit 1
 fi
 Os_checking() {

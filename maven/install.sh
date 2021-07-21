@@ -19,7 +19,7 @@ Os_checking() {
   if [ $ELV != "el7" ]; then
       echo -e "\e[31merror ✗.. \e[0m OS Version not supported"
       PrintHead "${B_system} so this Script is Capabul for CentOs systems"
-      exit 1
+      
     else
       PrintHead "${B_system} so this Script is Capabul for CentOs systems"
       PrintHead "This script is Installing mvn"

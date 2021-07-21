@@ -62,4 +62,4 @@ PrintHead "Creating "sonar" user"
 id -u sonar &>>/dev/null || useradd sonar
 Stat $? "sonar User Creation Is ::"
 
-PrintHead "Downloading So"
+PrintHead "Downloading Sonarqube."

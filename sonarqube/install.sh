@@ -13,6 +13,7 @@ Sonar_Ver=$(curl -s https://binaries.sonarsource.com/Distribution/sonarqube/ | g
 SDURL="https://binaries.sonarsource.com/Distribution/sonarqube-${Sonar_Ver}.zip"
 SFILENAME=$(echo ${SDURL} | awk -F / '{print $NF}')
 SDIRNAME=$(echo ${SFILENAME} |sed -e 's/.zip/ /')
+curl -s -o ${SFILENAME} ${SDURL} 
 
 if [ $LID -ne 0 ] ;then
     echo -e "${R}You need to be root to perform this command.${N}"

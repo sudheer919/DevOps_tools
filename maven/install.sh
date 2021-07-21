@@ -34,7 +34,7 @@ Stat $? "Installing java is ::"
 PrintHead "Downloading MVN"
 cd /opt/
 curl -s https://downloads.apache.org/maven/maven-3/${Mvn_Ver}/binaries/apache-maven-${Mvn_Ver}-bin.zip -o /tmp/apache-maven-${Mvn_Ver}-bin.zip
-Stat 
+Stat $? "Downloading "
 
 
 

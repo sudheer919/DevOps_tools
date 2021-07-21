@@ -66,7 +66,7 @@ Stat $? "sonar User Creation Is ::"
 
 PrintHead "Downloading Sonarqube.zip"
 cd /home/sonar 
-curl -s -o ${SFILENAME} ${SDURL} 
+curl -s -o ${FILENAME} ${URL} 
 Stat $? "sonarqub Downlode is ::"
 
 PrintHead "Extracting ${SFILENAME}"

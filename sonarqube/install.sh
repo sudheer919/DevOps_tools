@@ -74,9 +74,7 @@ unzip -o ${FILENAME} &>>$LOG
 chown sonar:sonar sonarqube -R
 
 mv /home/sonar/${FILENAME}  /home/sonar/sonarqube
-
 Stat $? "Extracting Sonarqube is ::"
-
 PrintHead "Starting Sonarqube Server"
 curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/sonarqube/sonarqube.service >/etc/systemd/system/sonarqube.service
 systemctl daemon-reload &>>$LOG

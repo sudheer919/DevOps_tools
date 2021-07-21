@@ -33,6 +33,8 @@ Stat $? "Installing java is ::"
 
 PrintHead "Downloading MVN"
 https://downloads.apache.org/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.zip
+curl -s https://archive.apache.org/dist/maven/maven-3/${VERSION}/binaries/apache-maven-${VERSION}-bin.zip -o /tmp/apache-maven-${VERSION}-bin.zip
+
 
 
 

@@ -79,6 +79,7 @@ curl -s -o $FILENAME $URL
 unzip $FILENAME
 rm -f $FILENAME
 mv $FOLDERNAME sonarqube
+chown sonar:sonar sonarqube -R
 
 #------------------------------------
 #unzip -o ${FILENAME} &>>$LOG

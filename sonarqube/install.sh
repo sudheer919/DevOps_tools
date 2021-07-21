@@ -47,5 +47,5 @@ Stat(){
 
 
 PrintHead "Installing epel-release "
-yum install epel-release -y
+yum install epel-release -y 
 yum install java-11-openjdk unzip -y

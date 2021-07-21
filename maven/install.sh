@@ -1,3 +1,3 @@
 #!/bin/bash
 LID=$(id -u)
-if [ ]
+if [ $LID ]

@@ -22,7 +22,7 @@ PrintHead() {
 
 Stat(){
     if [ $1 -ne 0 ] ;then 
-        echo -e "${R}✗${N}  $2 ${R}UNSUCCESSFUL${N}"
+        echo -e "${R}✗\t${N}  $2 ${R}UNSUCCESSFUL${N}"
         echo -e "${R}✗\t${N}Check ${R}$LOG${N}"
         exit
     else

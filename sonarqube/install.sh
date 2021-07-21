@@ -72,7 +72,6 @@ Stat $? "sonarqub Downlode is ::"
 
 PrintHead "Extracting ${FILENAME}"
 #----------------------------------
-cd /home/sonar
 
 rm -rf sonarqube
 curl -s -o $FILENAME $URL

@@ -72,8 +72,6 @@ Stat $? "sonarqub Downlode is ::"
 
 
 PrintHead "Extracting ${FILENAME}"
-#----------------------------------
-
 rm -rf sonarqube*
 curl -s -o $FILENAME $URL
 unzip $FILENAME
@@ -81,6 +79,7 @@ rm -f $FILENAME
 mv $FOLDERNAME sonarqube
 chown sonar:sonar sonarqube -R
 Stat $? "Extracting Sonarqube is ::"
+
 PrintHead "Starting Sonarqube Server"
 curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/sonarqube/sonarqube.service >/etc/systemd/system/sonarqube.service
 systemctl daemon-reload &>>$LOG

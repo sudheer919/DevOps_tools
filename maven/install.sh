@@ -42,7 +42,7 @@ Stat(){
         echo "----------------------------"
     fi
 }
-
+Os_checking
 PrintHead "Installing Java"
 yum install java-1.8.0-openjdk-devel unzip  -y &>>$LOG
 Stat $? "Installing java is ::"

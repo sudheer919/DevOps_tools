@@ -21,7 +21,8 @@ PrintHead() {
 Stat(){
     if [ $1 -ne 0 ] ;then 
         echo -e "${R} $2 UNSUCCESSFUL ${N}"
-    
+    else
+        echo -e ""
 }
 PrintHead "Installing Java"
 yum install java-1.8.0-openjdk-devel unzip  -y &>>/dev/null

@@ -48,5 +48,5 @@ Stat(){
 
 PrintHead "Installing epel-release "
 yum install epel-release -y &>>${LOG}
-Stat $? "Installing EPL"
+Stat $? "Installing EPEL Packages ::"
 yum install java-11-openjdk unzip -y &>>${LOG}

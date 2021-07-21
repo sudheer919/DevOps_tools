@@ -23,7 +23,7 @@ Stat(){
     if [ $1 -ne 0 ] ;then 
         echo -e "✗  $2 ${R}UNSUCCESSFUL${N}"
     else
-        echo -e "✓  $2 ${G}SUCCESS${N}"
+        echo -e "${G}✓${N}  $2 ${G}SUCCESS${N}"
         echo "----------------------------"
     fi
 }

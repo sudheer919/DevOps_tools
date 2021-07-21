@@ -8,12 +8,7 @@ N="\e[0m"
 P="\e[35m"
 LID=$(id -u)
 LOG=/tmp/sonarqube.log
-<<com
-Sonar_Ver=$(curl -s https://binaries.sonarsource.com/Distribution/sonarqube/ | grep '.zip<' |tail -1 | sed -e 's/>/ /g'| xargs -n 1 | grep '^href'|sed -e 's/href=sonarqube-//' |sed -e 's/.zip//')
-SDURL="https://binaries.sonarsource.com/Distribution/sonarqube-${Sonar_Ver}.zip"
-SFILENAME=$(echo ${SDURL} | awk -F / '{print $NF}')
-SDIRNAME=$(echo ${SFILENAME} |sed -e 's/.zip/ /')
-com
+
 
 
 if [ $LID -ne 0 ] ;then

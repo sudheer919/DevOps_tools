@@ -73,3 +73,4 @@ mv /home/sonar${SFILENAME}  /home/sonar/sonarqube
 Stat $? "Extracting Sonarqube is ::"
 
 
+

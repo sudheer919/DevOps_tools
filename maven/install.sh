@@ -8,7 +8,7 @@ P="\e[35m"
 LID=$(id -u)
 
 if [ $LID -ne 0 ] ;then
-    echo -e "You need to be A root user to run this script\e[0m"
+    echo -e "${R}You need to be A root user to run this script\e[0m"
     exit 1
 fi
 

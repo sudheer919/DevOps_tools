@@ -5,7 +5,6 @@ if [ $LID -ne 0 ] ;then
     exit 1
 fi
 
-PRINT(){
-
-    
+PrintHead() {
+  echo -e "${P}➜ INFO::$1$N"
 }

@@ -69,17 +69,17 @@ Stat $? "sonarqub Downlode is ::"
 
 PrintHead "Extracting ${SFILENAME}"
 unzip -o ${SFILENAME} &>>$LOG
-mv /home/sonar/${SFILENAME}  /home/sonar/sonarqube
-chown sonar:sonar sonarqube -R
-Stat $? "Extracting Sonarqube is ::"
+# mv /home/sonar/${SFILENAME}  /home/sonar/sonarqube
+# chown sonar:sonar sonarqube -R
+# Stat $? "Extracting Sonarqube is ::"
 
-PrintHead "Starting Sonarqube Server"
-curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/sonarqube/sonarqube.service >/etc/systemd/system/sonarqube.service
-systemctl daemon-reload &>>$LOG
-systemctl enable sonarqube &>>$LOG
-sed -i -e '/^RUN_AS_USER/ d' -e '/#RUN_AS_USER/ a RUN_AS_USER=sonar' /home/sonar/sonarqube/bin/linux-x86-64/sonar.sh
-systemctl start sonarqube
-Stat $? "starting Sonar is ::"
+# PrintHead "Starting Sonarqube Server"
+# curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/sonarqube/sonarqube.service >/etc/systemd/system/sonarqube.service
+# systemctl daemon-reload &>>$LOG
+# systemctl enable sonarqube &>>$LOG
+# sed -i -e '/^RUN_AS_USER/ d' -e '/#RUN_AS_USER/ a RUN_AS_USER=sonar' /home/sonar/sonarqube/bin/linux-x86-64/sonar.sh
+# systemctl start sonarqube
+# Stat $? "starting Sonar is ::"
 
 
 

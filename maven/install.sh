@@ -13,6 +13,18 @@ if [ $LID -ne 0 ] ;then
     echo -e "${R}You need to be A root user to run this script${N}"
     exit 1
 fi
+Os_checking() {
+  ELV=$(rpm -q basesystem | sed -e 's/\./ /g' | xargs -n 1 | grep ^el)
+  B_system=$(rpm -q basesystem)
+  if [ $ELV != "el7" ]; then
+      echo -e "\e[31merror ✗.. \e[0m OS Version not supported"
+      PrintHead "${B_system} so this Script is Capabul for CentOs systems"
+      exit 1
+    else
+      PrintHead "${B_system} so this Script is Capabul for CentOs systems"
+      PrintHead "This script is Installing jenkins Server"
+  fi
+}
 
 PrintHead() {
   echo "----------------------------"

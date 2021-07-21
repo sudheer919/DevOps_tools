@@ -58,4 +58,5 @@ PrintHead "Installing Java-11-Openjdk & Os-Utilities"
 yum install java-11-openjdk unzip -y &>>${LOG}
 Stat $? "Installing Java and Os-Utilities ::"
 
-PrintHead "Creating "sonar" user "
+PrintHead "Creating "sonar" user"
+id -u

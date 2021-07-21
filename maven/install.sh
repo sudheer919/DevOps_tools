@@ -6,6 +6,7 @@ G="\e[32m"
 N="\e[0m"
 P="\e[35m"
 LID=$(id -u)
+LOG
 Mvn_Ver=$(curl -s  https://maven.apache.org/download.cgi | grep "Downloading"| awk '{print $5}' | awk -F '<' '{print $1}')
 
 if [ $LID -ne 0 ] ;then

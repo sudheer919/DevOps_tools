@@ -46,4 +46,6 @@ Stat(){
 # main progream
 
 
-PrintHead ()
+PrintHead(){
+  
+}

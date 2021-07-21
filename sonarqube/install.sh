@@ -10,7 +10,7 @@ LID=$(id -u)
 LOG=/tmp/sonarqube.log
 
 Sonar_Ver=$(curl -s https://binaries.sonarsource.com/Distribution/sonarqube/ | grep '.zip<' | tail -1 | sed -e 's/>/ /g' |xargs -n 1| grep ^sonarqub| awk -F '-' '{print$2}'| awk -F'.zip</a' '{print $1}')
-SDURL="curl -s https://binaries.sonarsource.com/Distribution/sonarqube-${Sonar_Ver}.zip"
+SDURL="https://binaries.sonarsource.com/Distribution/sonarqube-${Sonar_Ver}.zip"
 SFILENAME=$(echo ${SDURL} | awk -F / '{print $NF}')
 SDIRNAME=$(echo ${SFILENAME} |sed -e 's/.zip/ /')
 

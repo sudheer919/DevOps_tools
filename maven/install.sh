@@ -15,3 +15,5 @@ fi
 PrintHead() {
   echo -e "\e[35m➜ INFO:: \e[0m"
 }
+
+PrintHead

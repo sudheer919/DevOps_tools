@@ -37,7 +37,7 @@ curl -s https://downloads.apache.org/maven/maven-3/${Mvn_Ver}/binaries/apache-ma
 Stat $? "Downloading maven${Mvn_Ver}"
 
 PrintHead "Moving mvn command to /bin/mvn"
-unzip 
+unzip /tmp/apache-maven-${Mvn_Ver}-bin.zip
 
 
 

@@ -73,7 +73,7 @@ PrintHead "Extracting ${FILENAME}"
 unzip -o ${FILENAME} &>>$LOG
 
 # mv /home/sonar/${FILENAME}  /home/sonar/sonarqube
-# chown sonar:sonar sonarqube -R
+# 
 # Stat $? "Extracting Sonarqube is ::"
 
 # PrintHead "Starting Sonarqube Server"

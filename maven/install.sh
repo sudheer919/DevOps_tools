@@ -42,7 +42,7 @@ mv apache-maven-${Mvn_Ver} maven
 ln -s /opt/maven/bin/mvn  /bin/mvn
 Stat $? "mvn command is added to /bin is ::"
 
-PrintHead "check with "mvn" c
+PrintHead 'check with "mvn" command'
 
 
 

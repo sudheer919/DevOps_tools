@@ -60,4 +60,4 @@ Stat $? "Installing Java and Os-Utilities ::"
 
 PrintHead "Creating "sonar" user"
 id -u sonar &>>/dev/null || useradd sonar
-Stat $? ""
+Stat $? "User sonar Creation Is ::"

@@ -20,7 +20,7 @@ PrintHead() {
 
 Stat(){
     if [ $1 -ne 0 ] ;then 
-        echo -e "${R} $2 UNSUCCESSFUL ${N}"
+        echo -e "$2 ${R}UNSUCCESSFUL ${N}"
     else
         echo -e "${G} $2 SUCCESS ${N}"
         echo "----------------------------"

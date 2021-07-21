@@ -30,7 +30,7 @@ Stat(){
     fi
 }
 PrintHead "Installing Java"
-yum install java-1.8.0-openjdk-devel unzip  -y &>>/dev/null
+yum install java-1.8.0-openjdk-devel unzip  -y &>>$LOG
 Stat $? "Installing java is ::"
 
 PrintHead "Downloading latest maven-${Mvn_Ver}"

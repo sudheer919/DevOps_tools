@@ -31,7 +31,7 @@ PrintHead "Installing Java"
 yum install java-1.8.0-openjdk-devel unzip  -y &>>/dev/null
 Stat $? "Installing java is ::"
 
-PrintHead "Downloading maven-${Mvn_Ver}"
+PrintHead "Downloading latest maven-${Mvn_Ver}"
 cd /opt/
 curl -s https://downloads.apache.org/maven/maven-3/${Mvn_Ver}/binaries/apache-maven-${Mvn_Ver}-bin.zip -o /tmp/apache-maven-${Mvn_Ver}-bin.zip
 Stat $? "Downloading maven${Mvn_Ver}"

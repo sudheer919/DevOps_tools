@@ -6,5 +6,5 @@ if [ $LID -ne 0 ] ;then
 fi
 
 PrintHead() {
-  echo -e "${P}➜ INFO::$1$N"
+  echo -e "\e[➜ INFO::$1$N"
 }

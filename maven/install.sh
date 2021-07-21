@@ -39,7 +39,7 @@ curl -s https://downloads.apache.org/maven/maven-3/${Mvn_Ver}/binaries/apache-ma
 Stat $? "Downloading maven${Mvn_Ver}"
 
 PrintHead "Moving mvn command to /bin/mvn"
-unzip -o /tmp/apache-maven-${Mvn_Ver}-bin.zip &>>/dev/null
+unzip -o /tmp/apache-maven-${Mvn_Ver}-bin.zip &>>$LOG
 mv apache-maven-${Mvn_Ver} maven
 ln -s /opt/maven/bin/mvn  /bin/mvn
 Stat $? "mvn command is added to /bin is ::"

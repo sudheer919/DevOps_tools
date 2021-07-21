@@ -59,7 +59,7 @@ yum install java-11-openjdk unzip -y &>>${LOG}
 Stat $? "Installing Java and Os-Utilities ::"
 
 PrintHead "Creating "sonar" user"
-id -u sonar &>>/dev/null || useradd sonar
+id -u sonar &>>$LOG || useradd sonar
 Stat $? "sonar User Creation Is ::"
 
 PrintHead "Downloading Sonarqube.zip"
@@ -72,6 +72,7 @@ unzip -o ${SFILENAME} &>>$LOG
 mv /home/sonar${SFILENAME}  /home/sonar/sonarqube
 chown sonar:sonar sonarqube -R
 Stat $? "Extracting Sonarqube is ::"
+
 
 
 

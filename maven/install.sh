@@ -32,7 +32,7 @@ yum install java-1.8.0-openjdk-devel unzip  -y &>>/dev/null
 Stat $? "Installing java is ::"
 
 PrintHead "Downloading MVN"
-curl -s https://downloads.apache.org/maven/maven-3/${Mvn_Ver}/binaries/apache-maven-3.8.1-bin.zip
+curl -s https://downloads.apache.org/maven/maven-3/${Mvn_Ver}/binaries/apache-maven-${Mvn_Ver}-bin.zip
 
 
 

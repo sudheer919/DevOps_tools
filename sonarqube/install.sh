@@ -11,6 +11,7 @@ LOG=/tmp/sonarqube.log
 
 
 
+
 if [ $LID -ne 0 ] ;then
     echo -e "${R}You need to be root to perform this command.${N}"
     exit 1

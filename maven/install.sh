@@ -19,5 +19,5 @@ PrintHead() {
 }
 
 PrintHead "Installing Java"
-yum install java-1.8.0-openjdk-devel unzip  -y &>>/de
+yum install java-1.8.0-openjdk-devel unzip  -y &>>/dev/null
 

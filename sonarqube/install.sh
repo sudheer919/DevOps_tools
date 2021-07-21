@@ -67,5 +67,5 @@ cd /home/sonar
 curl -s -o ${SFILENAME} ${SDURL} 
 Stat $? "sonarqub Downlode is ::"
 
-mv ${SFILENAME} 
+mv /home/sonar${SFILENAME} 
 

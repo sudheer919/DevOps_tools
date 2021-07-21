@@ -73,7 +73,7 @@ mv /home/sonar${SFILENAME}  /home/sonar/sonarqube
 chown sonar:sonar sonarqube -R
 Stat $? "Extracting Sonarqube is ::"
 
-PrintHead 
+PrintHead S
 https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/sonarqube/sonarqube.service >/etc/systemd/system/sonarqube.service
 systemctl daemon-reload
 systemctl enable sonarqube

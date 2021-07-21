@@ -20,7 +20,7 @@ PrintHead() {
 
 Stat(){
     if [ $1 -ne 0 ] ;then 
-    
+        
 }
 PrintHead "Installing Java"
 yum install java-1.8.0-openjdk-devel unzip  -y &>>/dev/null

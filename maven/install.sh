@@ -13,7 +13,7 @@ if [ $LID -ne 0 ] ;then
 fi
 
 PrintHead() {
-  echo -e "\e[35m➜ INFO:: \e[0m"
+  echo -e "\e[35m➜ INFO:: $1 \e[0m"
 }
 
-PrintHead
+PrintHead 

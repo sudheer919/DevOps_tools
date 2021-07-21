@@ -41,7 +41,7 @@ Stat $? "Downloading maven${Mvn_Ver}"
 
 PrintHead "Moving mvn command to /bin/mvn"
 unzip -o /tmp/apache-maven-${Mvn_Ver}-bin.zip &>>$LOG
-mv apache-maven-${Mvn_Ver} maven
+mv apache-maven-${Mvn_Ver} maven   &>>$LOG 
 ln -s /opt/maven/bin/mvn  /bin/mvn &>>$LOG
 Stat $? "mvn command is added to /bin is ::"
 

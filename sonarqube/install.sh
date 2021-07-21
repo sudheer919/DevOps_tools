@@ -82,7 +82,7 @@ mv $FOLDERNAME sonarqube
 
 #------------------------------------
 #unzip -o ${FILENAME} &>>$LOG
-#chown sonar:sonar sonarqube -R
+#
 #mv /home/sonar/${FILENAME}  /home/sonar/sonarqube
 
 Stat $? "Extracting Sonarqube is ::"

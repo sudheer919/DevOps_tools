@@ -46,4 +46,6 @@ Stat(){
 # main progream
 
 
-PrintHead "Installing "
+PrintHead "Installing  "
+yum install epel-release -y
+yum install java-11-openjdk unzip -y

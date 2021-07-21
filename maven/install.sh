@@ -18,5 +18,5 @@ PrintHead() {
   echo "----------------------------"
 }
 
-PrintHead "Installing Maven"
+PrintHead "Installing Java"
 

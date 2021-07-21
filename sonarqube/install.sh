@@ -79,7 +79,7 @@ systemctl daemon-reload
 systemctl enable sonarqube
 sed -i -e '/^RUN_AS_USER/ d' -e '/#RUN_AS_USER/ a RUN_AS_USER=sonar' /home/sonar/sonarqube/bin/linux-x86-64/sonar.sh
 systemctl start sonarqube
-
+Stat 
 
 
 

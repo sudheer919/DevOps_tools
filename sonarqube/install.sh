@@ -15,6 +15,8 @@ SFILENAME=$(echo ${SDURL} | awk -F / '{print $NF}')
 SDIRNAME=$(echo ${SFILENAME} |sed -e 's/.zip/ /')
 com
 
+$(curl -s https://binaries.sonarsource.com/Distribution/sonarqube/ | grep '.zip<' | tail -1 | sed -e 's/</ /g'  | xargs -n1 | grep ^href | sed -e 's/href=sonarqube-//' -e 's/.zip>//')
+
 curl -s -o ${SFILENAME} ${SDURL} 
 
 if [ $LID -ne 0 ] ;then

@@ -50,5 +50,5 @@ PrintHead "Installing epel-release "
 yum install epel-release -y &>>${LOG}
 Stat $? "Installing EPEL Packages ::"
 
-PrintHead "Installing Java-11-Openjdk & "
+PrintHead "Installing Java-11-Openjdk & Os-Utilities"
 yum install java-11-openjdk unzip -y &>>${LOG}

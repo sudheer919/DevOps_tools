@@ -24,6 +24,7 @@ Stat(){
     else
         echo -e "$2 ${G}SUCCESS${N}"
         echo "----------------------------"
+    fi
 }
 PrintHead "Installing Java"
 yum install java-1.8.0-openjdk-devel unzip  -y &>>/dev/null

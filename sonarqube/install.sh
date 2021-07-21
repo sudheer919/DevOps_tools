@@ -8,7 +8,7 @@ N="\e[0m"
 P="\e[35m"
 LID=$(id -u)
 LOG=/tmp/sonarqube.log
-Sonar_ver=$(curl -s https://binaries.sonarsource.com/Distribution/sonarqube/ | grep '.zip<' | tail -1 | sed -e 's/>/ /g' |xargs -n 1| grep ^sonarqub| awk -F '-' '{print$2}'| awk -F'.zip</a' '{print $1}'
+Sonar_ver=$(curl -s https://binaries.sonarsource.com/Distribution/sonarqube/ | grep '.zip<' | tail -1 | sed -e 's/>/ /g' |xargs -n 1| grep ^sonarqub| awk -F '-' '{print$2}'| awk -F'.zip</a' '{print $1}')
 
 if [ $LID -ne 0 ] ;then
     echo -e "${R}You need to be root to perform this command.${N}"

@@ -66,13 +66,15 @@ Stat $? "sonar User Creation Is ::"
 
 PrintHead "Downloading Sonarqube.zip"
 cd /home/sonar 
+pkill java/
 curl -s -o ${FILENAME} ${URL} 
 Stat $? "sonarqub Downlode is ::"
 
 PrintHead "Extracting ${FILENAME}"
 #----------------------------------
 cd /home/sonar
-pkill java/rm -rf sonarqube
+
+rm -rf sonarqube
 curl -s -o $FILENAME $URL
 unzip $FILENAME
 rm -f $FILENAME

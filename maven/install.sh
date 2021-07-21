@@ -15,6 +15,7 @@ fi
 PrintHead() {
   echo "----------------------------"
   echo -e "\e[35m➜ INFO:: $1 \e[0m"
+  echo "----------------------------"
 }
 
 PrintHead "Installing Maven"

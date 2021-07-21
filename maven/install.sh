@@ -15,7 +15,7 @@ fi
 PrintHead() {
   echo "----------------------------"
   echo -e "\e[35m➜ INFO:: $1 \e[0m"
-  echo "----------------------------"
+  
 }
 
 Stat(){
@@ -27,5 +27,6 @@ Stat(){
 }
 PrintHead "Installing Java"
 yum install java-1.8.0-openjdk-devel unzip  -y &>>/dev/null
+Stat 
 
 

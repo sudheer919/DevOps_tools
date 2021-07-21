@@ -22,7 +22,7 @@ Os_checking() {
       Stat $? 
     else
       PrintHead "${B_system} so this Script is capable for CentOs systems"
-      PrintHead "This script is Installing mvn"
+      PrintHead "This script will Install mvn"
   fi
 }
 

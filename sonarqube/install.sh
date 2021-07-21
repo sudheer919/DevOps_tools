@@ -49,7 +49,7 @@ Stat(){
 }
 # main progream
 
-
+Os_checking
 PrintHead "Installing epel-release "
 yum install epel-release -y &>>${LOG}
 Stat $? "Installing EPEL Packages ::"

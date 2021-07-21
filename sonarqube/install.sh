@@ -81,10 +81,7 @@ rm -f $FILENAME
 mv $FOLDERNAME sonarqube
 chown sonar:sonar sonarqube -R
 
-#------------------------------------
-#unzip -o ${FILENAME} &>>$LOG
-#
-#mv /home/sonar/${FILENAME}  /home/sonar/sonarqube
+
 
 Stat $? "Extracting Sonarqube is ::"
 PrintHead "Starting Sonarqube Server"

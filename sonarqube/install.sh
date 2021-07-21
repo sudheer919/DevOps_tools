@@ -69,7 +69,7 @@ Stat $? "sonarqub Downlode is ::"
 
 PrintHead "Extracting ${SFILENAME}"
 unzip -o ${SFILENAME} &>>$LOG
-mv /home/sonar${SFILENAME}  /home/sonar/sonarqube
+mv /home/sonar/${SFILENAME}  /home/sonar/sonarqube
 chown sonar:sonar sonarqube -R
 Stat $? "Extracting Sonarqube is ::"
 

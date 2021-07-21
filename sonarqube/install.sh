@@ -67,7 +67,7 @@ cd /home/sonar
 curl -s -o ${SFILENAME} ${SDURL} 
 Stat $? "sonarqub Downlode is ::"
 
-PrintHead 
+PrintHead "Extracting "
 unzip -o ${SFILENAME}
 mv /home/sonar${SFILENAME}  /home/sonar/${SDIRNAME}
 

@@ -73,12 +73,13 @@ mv /home/sonar${SFILENAME}  /home/sonar/sonarqube
 chown sonar:sonar sonarqube -R
 Stat $? "Extracting Sonarqube is ::"
 
-PrintHead S
+PrintHead "Starting Sonarqube Server"
 https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/sonarqube/sonarqube.service >/etc/systemd/system/sonarqube.service
 systemctl daemon-reload
 systemctl enable sonarqube
 sed -i -e '/^RUN_AS_USER/ d' -e '/#RUN_AS_USER/ a RUN_AS_USER=sonar' /home/sonar/sonarqube/bin/linux-x86-64/sonar.sh
 systemctl start sonarqube
+
 
 
 

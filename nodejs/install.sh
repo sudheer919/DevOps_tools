@@ -10,7 +10,7 @@ FILENAME=$(echo $URL | awk -F '/' '{print $NF}')
 FOLDER_NAME=$(echo $FILENAME | sed -e 's|.tar.xz| |')
 
 curl -s -o /tmp/$FILENAME $URL
-
+cd /opt
 tar -xf /tmp/$FILENAME
 
 mv $FOLDER_NAME nodejs

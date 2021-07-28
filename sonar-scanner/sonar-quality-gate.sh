@@ -15,5 +15,5 @@ fi
 
 # USERNAME=admin
 # PASSWORD=sonar123
-# HOSTIP=100.25.77.85
+# HOSTIP=IPADDRESS
 # KEY=cart (component_name)

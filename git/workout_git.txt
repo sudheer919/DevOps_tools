@@ -1,1 +1,5 @@
 #!/bin/bash
+echo "git add <file-name>
+git commit or
+git commit -m "message"
+git push"

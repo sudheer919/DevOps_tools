@@ -62,7 +62,7 @@ PrintHead  "Extracting Nexus"
 if [ ! -f "/home/nexus/$nexusdir" ] ; then
   su nexus <<EOF
   cd /home/nexus
-  tar xf $filename
+  tar xf /tmp/$filename
 EOF
 fi
 Stat $? "Extracting Nexus"

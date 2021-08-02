@@ -46,7 +46,7 @@ yum install https://kojipkgs.fedoraproject.org/packages/python-html2text/2016.9.
 url=$(curl -s  https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3 | html2text | grep tar.gz| head -1 |sed -e 's/</ /' -e 's/>/ /' |xargs -n1 |grep ^https)
 filename=$(echo $url | awk -F / '{print $NF}')
 nexusdir=$(echo $filename | sed -e 's/-unix.tar.gz/ /')
-wget $url -o /tmp/${filename}
+curl -s -L -o /tmp/${filename} $url
 Stat $? "Downloading Nexus"
 
 PrintHead "Creating Nexus User"
@@ -62,7 +62,7 @@ PrintHead  "Extracting Nexus"
 if [ ! -f "/home/nexus/$nexusdir" ] ; then
   su nexus <<EOF
   cd /home/nexus
-  tar xf /tmp/$filename
+  tar -xf /tmp/$filename
 EOF
 fi
 Stat $? "Extracting Nexus"

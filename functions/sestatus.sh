@@ -6,7 +6,7 @@ curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/func
 
 
 
-PrintHead "Checking SElinux"
+PrintHead "Checking SElinux status"
 SEstatus=$(sestatus | grep "SELinux status" | awk '{print $NF}' )
 echo
 if [ ${SEstatus} == "enabled" ] ; then

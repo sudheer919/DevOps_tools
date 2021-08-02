@@ -43,7 +43,6 @@ Stat  $? "Installing java"
 
 PrintHead "Downloading Nexus Dependencies"
 yum install https://kojipkgs.fedoraproject.org/packages/python-html2text/2016.9.19/1.el7/noarch/python2-html2text-2016.9.19-1.el7.noarch.rpm -y &>/dev/null
-
 url=$(curl -s  https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3 | html2text | grep tar.gz| head -1 |sed -e 's/</ /' -e 's/>/ /' |xargs -n1 |grep ^https)
 filename=$(echo $url | awk -F / '{print $NF}')
 nexusdir=$(echo $filename | sed -e 's/-unix.tar.gz/ /')

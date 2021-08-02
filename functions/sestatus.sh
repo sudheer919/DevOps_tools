@@ -14,4 +14,6 @@ if [ $SEstatus == "enabled"] ; then
     SimpleMessage "Disabling SELINUX.."
     sed -i -e '/^SELINUX/ c SELINUX=disabled' /etc/selinux/config
     Stat $? "Disabling Selinux is ::  ${2}"
+else
+    SimpleMessage "Already Selinux is ${SEstatus}"
 fi

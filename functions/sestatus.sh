@@ -9,7 +9,7 @@ curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/func
 PrintHead "Checking SElinux"
 SEstatus=$(sestatus | grep "SELinux status" | awk '{print $NF}' )
 echo
-if [ ${SEstatus} == "enabled"] ; then
+if [ ${SEstatus} == "enabled" ] ; then
     echo  "SELinux is :: ${SEstatus}"
     echo  "Disabling SELINUX.."
     sed -i -e '/^SELINUX/ c SELINUX=disabled' /etc/selinux/config

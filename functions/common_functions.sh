@@ -6,16 +6,31 @@ G="\e[32m"
 N="\e[0m"
 P="\e[35m"
 
+
+SElinux(){
+  PrintHead "Checking SElinux"
+  SEstatus=$(sestatus)
+}
+
+SimpleMessage(){
+  echo -e "$1"
+}
+
+
 ## Print Error in Red colour
 error() {
   echo -e "${R}✗::$1 $N"
 }
+SuccessOut() {
+  echo -e "${G}✓  $1 $N"
+}
+Failed(){
+  echo -e "${R}✗  $1 ${N}"
+}
+
 ##Print INFO
 PrintHead() {
   echo -e "${P}➜ INFO::$1$N"
-}
-SuccessOut() {
-  echo -e "${G}✓  $1 $N"
 }
 
 ##Checking Root User or not
@@ -28,12 +43,11 @@ CheckRoot() {
 }
 ## Status checking
 Stat() {
-
   if [ $1 -ne 0 ]; then
-    error "Install Failed ::: Check log file /tmp/function.log"
+    echo -e "${R}✗  $2  ::  FAILED ${N}"
     exit 2
   else
-    SuccessOut "SUCCESSFUL"
+    echo -e "${G}✓  $2  ::  SUCCESS ${N}"
   fi
 }
 Os_checking() {

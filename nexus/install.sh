@@ -38,7 +38,7 @@ SElinux
 Stat $? "Disabling selinux"
 
 PrintHead "Installing Java"
-yum install java -y &>/dev/null
+yum install java wget -y &>/dev/null
 Stat  $? "Installing java"
 
 PrintHead "Downloading Nexus Dependencies"

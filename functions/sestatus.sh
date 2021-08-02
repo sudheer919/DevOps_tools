@@ -10,10 +10,10 @@ PrintHead "Checking SElinux"
 SEstatus=$(sestatus | grep "SELinux status" | awk '{print $NF}' )
 echo
 if [ ${SEstatus} == "enabled"] ; then
-    SimpleMessage "SELinux is :: ${SEstatus}"
-    SimpleMessage "Disabling SELINUX.."
+    echo  "SELinux is :: ${SEstatus}"
+    echo  "Disabling SELINUX.."
     sed -i -e '/^SELINUX/ c SELINUX=disabled' /etc/selinux/config
     Stat $? "Disabling Selinux is ::  ${2}"
 else
-    SimpleMessage "Already Selinux is ${SEstatus}"
+    echo  "Already Selinux is ${SEstatus}"
 fi

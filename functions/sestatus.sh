@@ -14,7 +14,7 @@ if [ ${SEstatus} == "enabled" ] ; then
     echo  "Disabling SELINUX.."
     sed -i -e '/^SELINUX/ c SELINUX=disabled' /etc/selinux/config
     Stat $? "Disabling Selinux is ${2}"
-
+    echo "Need to reboot to Apply the Chainges"
 else
     echo  "Already Selinux is ${SEstatus}"
 fi

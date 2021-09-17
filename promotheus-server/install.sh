@@ -27,3 +27,7 @@ echo -e "$DIRNAME \n"
 
 cd /opt/
 curl -s -L -O $URL
+tar -xf $FILENAME
+rm -rf $FILENAME
+mv $DIRNAME prometheus
+

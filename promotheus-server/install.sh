@@ -31,3 +31,6 @@ tar -xf $FILENAME
 rm -rf $FILENAME
 mv $DIRNAME prometheus
 
+curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/promotheus-server/prometheus.service >/etc/systemd/system/prometheus.service
+systemctl restart prometheus
+systemctl enable prometheus

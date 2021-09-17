@@ -15,7 +15,12 @@ fi
 
 
 URL=$(curl -s -L   https://prometheus.io/download/ | grep tar  | grep prometheus- | grep linux-amd64 |sed -e "s|>| |g" -e "s|<| |g" -e "s|\"| |g" | xargs -n1 | grep ^https | tail -1)
-echo $URL
+echo -e $URL\n
 
 FILENAME=$(echo $URL | awk -F '/' '{print $NF}')
-echo $FILENAME
+echo -e $FILENAME\n
+
+
+prometheus-2.30.0.linux-amd64.tar.gz
+DIRNAME=$(echo $FILENAME | sed -e "s|.tar.gz| |")
+echo -e $DIRNAME \n

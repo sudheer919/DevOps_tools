@@ -14,7 +14,8 @@ if [ -d /opt/prometheus ] ; then
 fi
 
 
-
 URL=$(curl -s -L   https://prometheus.io/download/ | grep tar  | grep prometheus- | grep linux-amd64 |sed -e "s|>| |g" -e "s|<| |g" -e "s|\"| |g" | xargs -n1 | grep ^https | tail -1)
-
 echo $URL
+
+FILENAME=$(echo $URL | awk -F '/' '{print $NF}')
+echo $FILENAME

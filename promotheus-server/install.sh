@@ -21,6 +21,6 @@ FILENAME=$(echo $URL | awk -F '/' '{print $NF}')
 echo -e "$FILENAME \n"
 
 
-prometheus-2.30.0.linux-amd64.tar.gz
+
 DIRNAME=$(echo $FILENAME | sed -e "s|.tar.gz| |")
 echo -e "$DIRNAME \n"

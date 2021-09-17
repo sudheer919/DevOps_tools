@@ -24,3 +24,6 @@ echo -e "$FILENAME \n"
 
 DIRNAME=$(echo $FILENAME | sed -e "s|.tar.gz| |")
 echo -e "$DIRNAME \n"
+
+cd /opt/
+curl -s -L -O $URL

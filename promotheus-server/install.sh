@@ -2,7 +2,7 @@
 # Installing Promotheus Server
 
 #Checking Root user
-if [ "$(id -u)" -ne 0 ]; then
+if [ $(id -u) -ne 0 ]; then
     echo -e "\e[31m✗  Your must be a root user to perform this command..\e[0m"
     exit 1
 fi

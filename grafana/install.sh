@@ -9,6 +9,6 @@ if [ $(id -u) -ne 0 ]; then
 fi
 curl -s  https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/grafana/grafana.repo >/etc/yum.repos.d/grafana.repo
 
-yum install grafana -y
+yum install grafana -y &>/dev/null
 systemctl enable grafana-server
 systemctl start grafana-server

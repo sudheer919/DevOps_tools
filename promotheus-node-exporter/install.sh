@@ -1,5 +1,5 @@
 #!/bin/bash
-# Installing Promotheus Server
+# Installing Promotheus-Node-Exporter
 
 #Checking Root user
 if [ $(id -u) -ne 0 ]; then
@@ -20,7 +20,7 @@ cd /opt/
 curl -s -L -O $URL
 tar -xf $FILENAME
 rm -rf $FILENAME
-mv $DIRNAME prometheus
+mv $DIRNAME node_exporter
 
 curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/promotheus-server/prometheus.service >/etc/systemd/system/prometheus.service
 systemctl restart prometheus

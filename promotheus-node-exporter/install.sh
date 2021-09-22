@@ -22,6 +22,6 @@ tar -xf $FILENAME
 rm -rf $FILENAME
 mv $DIRNAME node_exporter
 
-curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/promotheus-server/prometheus.service >/etc/systemd/system/prometheus.service
-systemctl restart prometheus
-systemctl enable prometheus
+curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/promotheus-node-exporter/prometheus.service >/etc/systemd/system/node_exporter.service
+systemctl restart node_exporter
+systemctl enable node_exporter

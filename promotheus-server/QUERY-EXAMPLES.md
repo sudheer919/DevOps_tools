@@ -23,4 +23,14 @@ example:
 ``` 
 ceil()
 ceil(v instant-vector) rounds the sample values of all elements in v up to the nearest integer.
+example :
+    ceil(100-(rate(node_cpu_seconds_total{mode="idle"}[5m])*100))
+```
+
+
+```
+floor()
+floor(v instant-vector) rounds the sample values of all elements in v down to the nearest integer.
+example :
+    floor(100-(rate(node_cpu_seconds_total{mode="idle"}[5m])*100))
 ```

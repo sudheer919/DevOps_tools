@@ -1,3 +1,9 @@
+Metric has ben collected from prometheus and Grafana is trying to project them 
+# Installing Stress
+yum install stress -y
+
+stress --help
+
 #Examples
 '''
 - node_systemd_unit_state{job="prometheus-node",name="sshd.service"}

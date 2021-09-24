@@ -7,8 +7,8 @@ if [ $(id -u) -ne 0 ]; then
     exit 1
 fi
 #Checking Promotheus Directory If Exist removing That directory
-if [ -d /opt/prometheus ] ; then
-   rm -rf /opt/prometheus
+if [ -d /opt/node_exporter ] ; then
+   rm -rf /opt/node_exporter
 fi
 
 URL=$(curl -s -L   https://prometheus.io/download/ | grep tar  | grep node_exporter | grep linux-amd64 |sed -e "s|>| |g" -e "s|<| |g" -e "s|\"| |g" | xargs -n1 | grep ^https | tail -1)

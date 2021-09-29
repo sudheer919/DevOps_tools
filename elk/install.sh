@@ -6,6 +6,10 @@ G="\e[32m"
 N="\e[0m"
 P="\e[35m"
 
+error() {
+  echo -e "${R}✗::$1 $N"
+}
+
 CheckRoot() {
   RID=$(id -u)
   if [ $RID -ne 0 ]; then

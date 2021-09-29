@@ -50,38 +50,38 @@ Stat $? "Installing elasticsearch is\t\t"
 PrintHead "Make chainges in Configuration File"
 IPADDRESS=$(hostname -i | awk '{print$NF}')
 sed -i -e "/network.host/ c network.host: 0.0.0.0" -e "/http.port/ c http.port: 9200" -e "/cluster.initial_master_nodes/ c cluster.initial_master_nodes: \[\"${IPADDRESS}\"\]" /etc/elasticsearch/elasticsearch.yml
-Stat $? "Chainging Configuration File Is"
+Stat $? "Chainging Configuration File Is\t\t"
 
 PrintHead "Starting elasticsearch"
 systemctl enable elasticsearch &>>/tmp/elastic.log
 systemctl start elasticsearch &>>/tmp/elastic.log
-Stat $? "service Starting elasticsearch"
+Stat $? "service Starting elasticsearch\t\t"
 
 PrintHead "Installing kibana"
 yum install kibana  --enablerepo=elasticsearch -y &>>/tmp/elastic.log
-Stat $? "install kibana"
+Stat $? "install kibana\t\t"
 
 PrintHead "Starting kibana"
 systemctl enable kibana &>>/tmp/elastic.log
 systemctl start kibana &>>/tmp/elastic.log
-Stat $? "start Start Kibana"
+Stat $? "start Start Kibana\t\t"
 
 PrintHead "Installing logstash"
 yum install logstash --enablerepo=elasticsearch -y &>>/tmp/elastic.log
-Stat $? "install logstash"
+Stat $? "install logstash\t\t"
 
 PrintHead "Copying Logstash configuration"
 cp logstash.conf  /etc/logstash/conf.d/logstash.conf
-Stat $? "Addinng Configuration"
+Stat $? "Addinng Configuration\t\t"
 
 PrintHead "Starting logstash"
 systemctl enable logstash &>>/tmp/elastic.log
 systemctl start logstash &>>/tmp/elastic.log
-Stat $? "Start Logstash"
+Stat $? "Start Logstash\t\t"
 
 PrintHead "Installing nginx server"
 yum install nginx -y &>>/tmp/elastic.log
-Stat $? "Install Nginx"
+Stat $? "Install Nginx\t\t"
 
 
 curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/elk/http_proxy.conf >/etc/nginx/nginx.conf
@@ -89,4 +89,4 @@ curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/elk/
 PrintHead "Starting Nginx"
 systemctl enable nginx &>>/tmp/elastic.log
 systemctl start nginx &>>/tmp/elastic.log
-Stat $? "Start Nginx"
+Stat $? "Start Nginx\t\t"

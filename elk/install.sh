@@ -47,4 +47,14 @@ PrintHead "Installing elasticsearch..."
 yum install --enablerepo=elasticsearch elasticsearch -y &>>/tmp/elastic.log
 Stat $? "Installing elasticsearch is\t\t"
 
+PrintHead "Make chainges in Configuration File"
+IPADDRESS=$(hostname -i | awk '{print$NF}')
+sed -i -e "/network.host/ c network.host: 0.0.0.0" -e "/http.port/ c http.port: 9200" -e "/cluster.initial_master_nodes/ c cluster.initial_master_nodes: \[\"${IPADDRESS}\"\]" /etc/elasticsearch/elasticsearch.yml
+Stat $? "Chainging Configuration File Is"
+
+PrintHead "Starting elasticsearch"
+systemctl enable elasticsearch &>>/tmp/elastic.log
+systemctl start elasticsearch &>>/tmp/elastic.log
+Stat $? "Starting elasticsearch "
+
 

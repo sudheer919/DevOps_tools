@@ -9,7 +9,7 @@ P="\e[35m"
 
 ##Print INFO
 PrintHead() {
-  echo -e "${P}➜ INFO::$1$N"
+  echo -e "${P}➜ INFO::   $1$N"
 }
 
 error() {

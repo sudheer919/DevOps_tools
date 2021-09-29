@@ -37,7 +37,7 @@ CheckRoot
 
 PrintHead "Adding GPG-KEY For elasticsearch"
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
-Stat $? "Adding GPG-KEY\t\t\t"
+Stat $? "Adding GPG-KEY\t\t\t\t"
 
 PrintHead "Copying elastic.repo file to yum repo"
 cp elastic.repo /etc/yum.repos.d/elastic.repo

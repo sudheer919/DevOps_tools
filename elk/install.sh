@@ -55,6 +55,34 @@ Stat $? "Chainging Configuration File Is"
 PrintHead "Starting elasticsearch"
 systemctl enable elasticsearch &>>/tmp/elastic.log
 systemctl start elasticsearch &>>/tmp/elastic.log
-Stat $? "Starting elasticsearch "
+Stat $? "service Starting elasticsearch"
+
+PrintHead "Installing kibana"
+yum install kibana  --enablerepo=elasticsearch -y &>>/tmp/elastic.log
+Stat $? "install kibana"
+
+PrintHead "Starting kibana"
+systemctl enable kibana &>>/tmp/elastic.log
+systemctl start kibana &>>/tmp/elastic.log
+Stat $? "start Start Kibana"
+
+PrintHead "Installing logstash"
+yum install logstash --enablerepo=elasticsearch -y &>>/tmp/elastic.log
+Stat $? "install logstash"
+
+PrintHead "Copying Logstash configuration"
+cp logstash.conf  /etc/logstash/conf.d/logstash.conf
+Stat $? "Addinng Configuration"
+
+PrintHead "Starting logstash"
+systemctl enable logstash &>>/tmp/elastic.log
+systemctl start logstash &>>/tmp/elastic.log
+Stat $? "Start Logstash"
+
+PrintHead "Installing nginx server"
+yum install nginx -y &>>/tmp/elastic.log
+Stat $? "Install Nginx"
+
+PrintHead "Starting"
 
 

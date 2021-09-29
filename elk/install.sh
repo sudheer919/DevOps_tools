@@ -9,7 +9,7 @@ P="\e[35m"
 
 ##Print INFO
 PrintHead() {
-  echo -e "${P}   ➜    INFO  ::$1$N"
+  echo -e "${P}   ➜    INFO :: $1$N"
 }
 
 error() {
@@ -37,11 +37,11 @@ CheckRoot
 
 PrintHead "Adding GPG-KEY For elasticsearch"
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
-Stat $? "Adding GPG-KEY\t\t"
+Stat $? "Adding GPG-KEY\t\t\t"
 
 PrintHead "Copying elastic.repo file to yum repo"
 cp elastic.repo /etc/yum.repos.d/elastic.repo
-Stat $? "Adding elastic.repo\t\t"
+Stat $? "Adding elastic.repo\t\t\t"
 
 PrintHead "Installing elasticsearch..."
 yum install --enablerepo=elasticsearch elasticsearch -y &>>/tmp/elastic.log

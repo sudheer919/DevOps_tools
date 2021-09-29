@@ -36,5 +36,5 @@ Stat() {
 CheckRoot
 
 PrintHead "Adding GPG-KEY For elasticsearch"
-
+rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 Stat $? "Adding GPG-KEY"

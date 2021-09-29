@@ -59,29 +59,29 @@ Stat $? "service Starting elasticsearch\t\t"
 
 PrintHead "Installing kibana"
 yum install kibana  --enablerepo=elasticsearch -y &>>/tmp/elastic.log
-Stat $? "install kibana\t\t"
+Stat $? "install kibana\t\t\t\t"
 
 PrintHead "Starting kibana"
 systemctl enable kibana &>>/tmp/elastic.log
 systemctl start kibana &>>/tmp/elastic.log
-Stat $? "start Start Kibana\t\t"
+Stat $? "start Start Kibana\t\t\t"
 
 PrintHead "Installing logstash"
 yum install logstash --enablerepo=elasticsearch -y &>>/tmp/elastic.log
-Stat $? "install logstash\t\t"
+Stat $? "install logstash\t\t\t"
 
 PrintHead "Copying Logstash configuration"
 cp logstash.conf  /etc/logstash/conf.d/logstash.conf
-Stat $? "Addinng Configuration\t\t"
+Stat $? "Addinng Configuration\t\t\t"
 
 PrintHead "Starting logstash"
 systemctl enable logstash &>>/tmp/elastic.log
 systemctl start logstash &>>/tmp/elastic.log
-Stat $? "Start Logstash\t\t"
+Stat $? "Start Logstash\t\t\t\t"
 
 PrintHead "Installing nginx server"
 yum install nginx -y &>>/tmp/elastic.log
-Stat $? "Install Nginx\t\t"
+Stat $? "Install Nginx\t\t\t\t"
 
 
 curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/elk/http_proxy.conf >/etc/nginx/nginx.conf
@@ -89,4 +89,4 @@ curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/elk/
 PrintHead "Starting Nginx"
 systemctl enable nginx &>>/tmp/elastic.log
 systemctl start nginx &>>/tmp/elastic.log
-Stat $? "Start Nginx\t\t"
+Stat $? "Start Nginx\t\t\t\t"

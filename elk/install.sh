@@ -83,6 +83,10 @@ PrintHead "Installing nginx server"
 yum install nginx -y &>>/tmp/elastic.log
 Stat $? "Install Nginx"
 
-PrintHead "Starting"
 
+curl -s https://raw.githubusercontent.com/sudheermuthyala/DevOps_tools/main/elk/http_proxy.conf >/etc/nginx/nginx.conf
 
+PrintHead "Starting Nginx"
+systemctl enable nginx &>>/tmp/elastic.log
+systemctl start nginx &>>/tmp/elastic.log
+Stat $? "Start Nginx"

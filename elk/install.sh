@@ -9,7 +9,7 @@ P="\e[35m"
 
 ##Print INFO
 PrintHead() {
-  echo -e "${P}➜ INFO  ::  $1$N"
+  echo -e "${P}➜    INFO  ::  $1$N"
 }
 
 error() {
@@ -25,10 +25,10 @@ CheckRoot() {
 }
 Stat() {
   if [ $1 -ne 0 ]; then
-    echo -e "${R}✗  $2  ::  FAILED ${N}"
+    echo -e "${R}✗    $2  ::  FAILED ${N}"
     exit 2
   else
-    echo -e "${G}✓  $2  ::  SUCCESS ${N}"
+    echo -e "${G}✓    $2  ::  SUCCESS ${N}"
   fi
 }
 ###############################################

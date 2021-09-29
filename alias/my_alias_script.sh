@@ -17,6 +17,9 @@ CheckRoot() {
     exit 1
   fi
 }
+#####################
+#main
+CheckRoot
 
 echo "alias ss='sudo systemctl status'
 alias st='sudo systemctl start'

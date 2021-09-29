@@ -23,11 +23,11 @@ Print() {
 
 Print "\tGPG-KEY-elasticsearch"
 rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
-Stat $? "Key Added\t\t"
+Stat $? "Key Added\t\t\t"
 
 Print "\tAdding filebeat Repository"
 cp filebeat.repo  /etc/yum.repos.d/filebeat.repo
-Stat $? "Repo Added to yum.repos\t"
+Stat $? "Repo Added to yum.repos\t\t"
 
 Print "\tInstalling FileBeat..."
 yum install filebeat -y &>>/tmp/filebeat.log
@@ -35,5 +35,5 @@ Stat $? "filebeat Installation is\t"
 
 Print "\tStarting Filebeat"
 systemctl start filebeat && systemctl enable filebeat &>>/tmp/filebeat.log
-Stat $? "Started filebeat\t"
+Stat $? "Started filebeat\t\t"
 

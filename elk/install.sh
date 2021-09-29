@@ -9,7 +9,7 @@ P="\e[35m"
 
 ##Print INFO
 PrintHead() {
-  echo -e "${P}   ➜    INFO  ::\t\t$1$N"
+  echo -e "${P}   ➜    INFO  ::$1$N"
 }
 
 error() {
@@ -25,10 +25,10 @@ CheckRoot() {
 }
 Stat() {
   if [ $1 -ne 0 ]; then
-    echo -e "${R}   ✗    $2\t\t::  FAILED ${N}"
+    echo -e "${R}   ✗    $2::  FAILED ${N}"
     exit 2
   else
-    echo -e "${G}   ✓    $2\t\t::  SUCCESS ${N}"
+    echo -e "${G}   ✓    $2::  SUCCESS ${N}"
   fi
 }
 ###############################################
@@ -37,14 +37,14 @@ CheckRoot
 
 PrintHead "Adding GPG-KEY For elasticsearch"
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
-Stat $? "Adding GPG-KEY"
+Stat $? "Adding GPG-KEY\t\t"
 
 PrintHead "Copying elastic.repo file to yum repo"
 cp elastic.repo /etc/yum.repos.d/elastic.repo
-Stat $? "Adding elastic.repo "
+Stat $? "Adding elastic.repo\t\t"
 
 PrintHead "Installing elasticsearch..."
 yum install --enablerepo=elasticsearch elasticsearch -y &>>/tmp/elastic.log
-Stat $? "Installing elasticsearch is"
+Stat $? "Installing elasticsearch is\t\t"
 
 

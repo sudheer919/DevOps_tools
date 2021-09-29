@@ -2,4 +2,6 @@ rpm --import
 
 rpm -qa <pakage-name>
 
-rpm -q 
+rpm -qa | grep -i "name"
+
+rpm -e -e, --erase=<package>+  

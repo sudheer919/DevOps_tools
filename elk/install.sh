@@ -6,6 +6,12 @@ G="\e[32m"
 N="\e[0m"
 P="\e[35m"
 
+
+##Print INFO
+PrintHead() {
+  echo -e "${P}➜ INFO::$1$N"
+}
+
 error() {
   echo -e "${R}✗::$1 $N"
 }
@@ -25,7 +31,10 @@ Stat() {
     echo -e "${G}✓  $2  ::  SUCCESS ${N}"
   fi
 }
+###############################################
+# Main Program
 CheckRoot
-echo "Hello Sudheer Writing Script For ELK"
 
-Stat $? "ok"
+PrintHead "Adding GPG-KEY For elasticsearch"
+
+Stat $? "Adding GPG-KEY"

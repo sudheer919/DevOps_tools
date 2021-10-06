@@ -14,7 +14,7 @@ STATUS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=catalogue" |
 if [ $STATUS == "running" ] ; then
     echo "Already $COMPONENT is Exist"
     exit 2
-  fi
+fi
 
 
 PR_IP=$(aws ec2 run-instances --launch-template LaunchTemplateId=${LID},Version=${LVER} --tag-specifications "ResourceType=spot-instances-request,Tags=[{Key=Name,Value=${COMPONENT}}]" "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq .Instances[].PrivateIpAddress | sed -e 's/"/ /g' )

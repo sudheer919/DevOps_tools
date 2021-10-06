@@ -9,6 +9,7 @@ if [ -z ${INSTANCE_NAME} ] ;then
     exit   1
 fi
 
-aws ec2 run-instances --launch-template LaunchTemplateId=${LID},Version=${LVER} --tag-specifications 'ResourceType=spot-instances-request,Tags=[{Key=Name,Value=${INSTANCE_NAME}]' 'ResourceType=instance,Tags=[{Key=Name,Value=${INSTANCE_NAME}]'|jq .Instances[].PrivateIpAddress
+PR_IP=$(aws ec2 run-instances --launch-template LaunchTemplateId=${LID},Version=${LVER} --tag-specifications 'ResourceType=spot-instances-request,Tags=[{Key=Name,Value=${INSTANCE_NAME}]' 'ResourceType=instance,Tags=[{Key=Name,Value=${INSTANCE_NAME}]'|jq .Instances[].PrivateIpAddress)
 
+echo $PR_IP
 

@@ -30,7 +30,7 @@ PR_IP=$(aws ec2 run-instances --launch-template LaunchTemplateId=${LID},Version=
 
 
 
-sed -e "s/COMPONENT_NAME/COMPONENT/" -e "s/IPADDRESS/PR_IP/" record.json >/tmp/record.json
+sed -e "s/COMPONENT_NAME/${COMPONENT}/" -e "s/IPADDRESS/${PR_IP}/" record.json >/tmp/record.json
 
 aws route53 change-resource-record-sets --hosted-zone-id ${HOSTED_ZONE_ID} --change-batch file:///tmp/record.json
 

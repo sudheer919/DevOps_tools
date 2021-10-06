@@ -22,11 +22,6 @@ if [ $? -eq 0 ]; then
   exit 0
 fi
 
-aws ec2 describe-instances --filters "Name=tag:Name,Values=$COMPONENT" | jq .Reservations[].Instances[].State.Name | grep Pending &>/dev/null
-if [ $? -eq 0 ]; then
-  echo "Instance $COMPONENT is already Created and In Pending state"
-  exit 0
-fi
 
 PR_IP=$(aws ec2 run-instances --launch-template LaunchTemplateId=${LID},Version=${LVER} --tag-specifications "ResourceType=spot-instances-request,Tags=[{Key=Name,Value=${COMPONENT}}]" "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq .Instances[].PrivateIpAddress | sed -e 's/"/ /g' )
 

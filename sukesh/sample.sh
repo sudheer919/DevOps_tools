@@ -6,7 +6,7 @@ COMPONENT=$1
 
 if [ -z ${COMPONENT} ] ;then
     echo "Provide Instance Name"
-    exit 1
+    exit 0
 fi
 
 aws ec2 describe-instances --filters "Name=tag:Name,Values=$COMPONENT" | jq .Reservations[].Instances[].State.Name | grep running &>/dev/null

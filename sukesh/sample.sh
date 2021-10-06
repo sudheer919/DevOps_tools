@@ -22,7 +22,7 @@ fi
 aws ec2 describe-instances --filters "Name=tag:Name,Values=$COMPONENT" | jq .Reservations[].Instances[].State.Name | grep running &>/dev/null
 if [ $? -eq 0 ]; then
   echo "Instance $COMPONENT is already running"
-  exit 0
+  exit 1
 fi
 
 

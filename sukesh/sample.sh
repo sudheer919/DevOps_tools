@@ -11,7 +11,7 @@ fi
 
 STATUS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=catalogue" |jq .Reservations[].Instances[].State.Name| xargs)
 
-if [ $STATUS == "running"] ; then
+if [ $STATUS == "running" ] ; then
     echo "Already $COMPONENT is Exist"
     exit 2
   fi

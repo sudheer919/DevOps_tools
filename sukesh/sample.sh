@@ -9,9 +9,9 @@ if [ -z ${COMPONENT} ] ;then
     exit 1
 fi
 
-STATUS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=catalogue" |jq .Reservations[].Instances[].State.Name | awk '{print $1}' | xargs)
+aws ec2 describe-instances --filters "Name=tag:Name,Values=catalogue" |jq .Reservations[].Instances[].State.Name | grep "running" | xargs &>/dev/null
 
-if [ "${STATUS}" == "running" ] ; then
+if [ $? -eq 0 ] ; then
     echo "Already $COMPONENT is Exist"
     exit 2
 fi

@@ -12,10 +12,9 @@ fi
 #aws ec2 describe-instances --filters "Name=tag:Name,Values=catalogue" |jq .Reservations[].Instances[].State.Name | grep "running" | xargs &>/dev/null
 INSTANCE_EXISTS=$(aws ec2 describe-instances --filters Name=tag:Name,Values=${COMPONENT} | jq .Reservations[])
 
-
-if [ z "${INSTANCE_EXISTS}" -o "$STATE" == "terminated" ] ; then
-    echo "Already $COMPONENT is Exist"
-    exit 2
+if [  -z  "${INSTANCE_EXISTS}" -o "$STATE" == "terminated" ] ; then
+      echo "Already $COMPONENT is Exist"
+      exit 2
     else
       echo "creating instance"
 fi

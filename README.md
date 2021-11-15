@@ -4,6 +4,7 @@ collection of scripts to automate the installation of various tools
 
 #   Utilities
 #   Utilities
+```
 
 echo "alias ss='sudo systemctl status'
 alias st='sudo systemctl start'
@@ -23,3 +24,5 @@ chown -R centos:centos /home/centos/.ssh/
 git -C /home/centos/  clone git@ssh.dev.azure.com:v3/sudheerlikeu/D54/shell-scripting
 su - centos
 cd /home/centos/
+
+```

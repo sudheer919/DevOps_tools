@@ -19,7 +19,7 @@ exit_status() {
 ######################
 CheckRoot
 sudo yum install unzip -y  &>>/dev/null
-URL=$(curl https://www.terraform.io/downloads.html | grep "64-bit" | grep "linux_amd64.zip" | awk -F '"' '{print $2}')
+URL=$(curl -s https://www.terraform.io/downloads.html | grep "64-bit" | grep "linux_amd64.zip" | awk -F '"' '{print $2}')
 FILE_NAME=$(echo $URL | awk -F / '{print $NF}')
 curl -s -L -J -O $URL
 unzip -o $FILE_NAME -d /bin

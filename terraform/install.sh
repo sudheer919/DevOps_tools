@@ -11,14 +11,14 @@ CheckRoot() {
 }
 exit_status() {
   if [ $? -eq 0 ]; then
-    echo -e "\e[31m SUCCESS\e[0m"
+    echo -e "\e[33m SUCCESS\e[0m"
   fi
 }
 ######################
 #progream
 ######################
 CheckRoot
-sudo yum install unzip -y
+sudo yum install unzip -y  &>>/dev/null
 URL=$(curl https://www.terraform.io/downloads.html | grep "64-bit" | grep "linux_amd64.zip" | awk -F '"' '{print $2}')
 FILE_NAME=$(echo $URL | awk -F / '{print $NF}')
 curl -s -L -J -O $URL

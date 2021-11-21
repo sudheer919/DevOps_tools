@@ -11,7 +11,7 @@ CheckRoot() {
 }
 exit_status() {
   if [ $? -eq 0 ]; then
-    echo -e "\e[33m $1  SUCCESS\e[0m"
+    echo -e " $1 \e[32mSUCCESS\e[0m"
   fi
 }
 ######################

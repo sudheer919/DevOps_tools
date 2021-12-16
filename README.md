@@ -19,13 +19,11 @@ alias ti='terraform init'
 alias tp='terraform plan'
 alias ta='terraform apply -auto-approve'
 alias td='terraform destroy -auto-approve'
-
 alias 1='cd ../'
 alias 2='cd ../ ../'
 alias 3='cd ../ ../ ../'
 alias 4='cd ../ ../ ../ ../'
 alias t='sudo tail -f /var/log/messages'" >> /etc/profile.d/my_auto_script.sh && su -
-
 mkdir -R /home/centos/.ssh/
 cp -u ~/.ssh/??* /home/centos/.ssh/
 chown -R centos:centos /home/centos/.ssh/

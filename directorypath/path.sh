@@ -1,4 +1,5 @@
 #!/bin/bash
+## finding files and Directories in a path with size of a file/Directoy
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -14,5 +15,5 @@ do
         else [ -f $i ]
                 echo -e $i :$P File $N    " - "  $R$size$N
         fi
-done >su.txt
+done >outputfile.txt
 

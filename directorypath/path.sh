@@ -13,9 +13,9 @@ do
         size=$(stat -c%s "$i")
         if [ -d $i ]
         then
-                echo -e $i :$R Directory$N " - " $R$size$N
+                echo -e $i :$G Directory$N " - " $R$size$N
         else [ -f $i ]
-                echo -e $i :$R File $N    " - "  $R$size$N
+                echo -e $i :$P File $N    " - "  $R$size$N
         fi
 done >su.txt
 

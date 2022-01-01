@@ -6,7 +6,7 @@ P="\e[35m"
 #PAT=`ls -lh $1`
 
 read -p "Enter path : " filep
-for file in $filep
+for file in $(find $filep -dept);
 do
       if [ -d $file ]; then
           echo $file is a directory
@@ -16,3 +16,5 @@ do
            echo No file found
       fi
 done >file.txt
+
+#for i in $(find "$filep" -depth);

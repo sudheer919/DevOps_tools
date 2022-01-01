@@ -27,7 +27,7 @@ do
         if [ -d $i ]
         then
                 echo $i :Directory " - " $size
-        else
+        else [ -f $i ]
                 echo $i :File     " - "  $size
         fi
 done >su.txt

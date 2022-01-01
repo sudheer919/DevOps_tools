@@ -9,11 +9,11 @@ read -p "Enter path : " filep
 for file in $(find $filep );
 do
       if [ -d $file ]; then
-          echo $file is a directory
+          echo -e "G $file is a directory N"
      elif [ -f $file ]; then
-           echo $file is a file
-     else
-           echo No file found
+           echo -e "P $file is a file N"
+#     else
+#           echo -e "R No file found N"
       fi
 done >file.txt
 

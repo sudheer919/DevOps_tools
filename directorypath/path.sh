@@ -24,8 +24,11 @@ echo " file path   -   size "
 for i in $(find "$filep" -depth);
 do
         size=$(stat -c%s "$i")
-        if [ $size -gt 1000 ]
+        if [ -d $i ]
         then
-                echo $i " - " $size
+                echo $i :Directory " - " $size
+        else
+                echo $i :File     " - "  $size
         fi
-done
+done >su.txt
+

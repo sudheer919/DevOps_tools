@@ -10,12 +10,12 @@ for i in $(find "$filep" -depth);
 
 do
         # size=$(stat -c%s "$i")
-        size=$(du -h | sort -h)
+        size=$(du -h)
         if [ -d $i ]
         then
-                echo -e $i :$G Directory$N " - " $R$size$N
+                echo -e "$G Directory$N\t[:$i]\t[$R$size$N]"
         else [ -f $i ]
-                echo -e $i :$P File $N    " - "  $R$size$N
+                echo -e "$P File $N\t[:$i]\t[$R$size$N]"
         fi
 done >outputfile.txt
 

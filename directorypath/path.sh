@@ -7,8 +7,10 @@ P="\e[35m"
 read -p "Enter path : " -r filep
 echo " file path   -   size "
 for i in $(find "$filep" -depth);
+
 do
-        size=$(stat -c%s "$i")
+        # size=$(stat -c%s "$i")
+        size=$(du -h | sort -h)
         if [ -d $i ]
         then
                 echo -e $i :$G Directory$N " - " $R$size$N

@@ -15,7 +15,7 @@ do
         then
                 echo -e "$G Directory$N\t[:$i]\t[$R$size$N]"
         else [ -f $i ]
-                echo -e "$P File $N\t[:$i]\t[$R$size$N]"
+                echo -e "$P File $N\t\t[:$i]\t[$R$size$N]"
         fi
 done >outputfile.txt
 

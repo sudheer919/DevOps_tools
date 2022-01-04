@@ -8,10 +8,12 @@ read -p "Enter path : " -r filep
 echo "Given Path is..[$filep]"
 echo "File/Directory - [file path]   -   [size]"
 
-for i in $(find "$filep" -depth);
+#for i in $(find "$filep" -depth);
+for i in $(ls -lth "$filep");
 do
 #         size=$(stat -c%s "$i")
-        size=`du -h`
+        #size=`du -h`
+        #TIME=$(ls -lth $i )
         if [ -d $i ]
         then
                 echo   -e "$G Directory$N\t[$i]\t[$R$size$N]"

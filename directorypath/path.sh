@@ -10,8 +10,8 @@ echo "File/Directory - [file path]   -   [size]"
 
 for i in $(find "$filep" -depth);
 do
-         size=$(stat -c%s "$i")
-#        size=`du -h`
+#         size=$(stat -c%s "$i")
+        size=`du -h`
         if [ -d $i ]
         then
                 echo   "$G Directory$N\t[$i]\t[$R$size$N]"
